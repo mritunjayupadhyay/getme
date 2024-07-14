@@ -9,9 +9,7 @@ const app = express();
 // List of allowed origins
 const allowedOrigins = [
     "http://localhost:3000",
-    "http://127.0.0.1:5500",
-    "https://jagota-food-festival.mjcodes.dev",
-    "https://jagota-food-festival-dev.pages.dev"
+    "https://drive-google-docs.pages.dev"
 ];
 
 // CORS options
