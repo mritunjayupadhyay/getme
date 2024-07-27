@@ -5,7 +5,7 @@ import { GetMe } from "../models/GET_ME.model.js";
 import { Location } from "../models/location.model.js";
 
 const getMe = asyncHandler(async (req, res) => {
-  const me = await GetMe.find();
+  const me = await Location.find();
 
   return res.status(200).json(new ApiResponse(200, me));
 });
