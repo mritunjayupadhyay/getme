@@ -1,5 +1,6 @@
 import express from "express";
 import cors from "cors";
+import bodyParser from "body-parser";
 import 'dotenv/config';
 import meRouter from "./routes/get_me.routes.js";
 import uploadRouter from "./routes/upload.routes.js";
