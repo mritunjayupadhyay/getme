@@ -11,7 +11,7 @@ const getMe = asyncHandler(async (req, res) => {
 });
 
 const createMe = asyncHandler(async (req, res) => {
-  const { lt, lg, s } = req.body;
+  const { lt, lg, s, acc } = req.body;
 
   const event = await GetMe.create({
     lt,
@@ -25,14 +25,16 @@ const createMe = asyncHandler(async (req, res) => {
 });
 
 const createLocation = asyncHandler(async (req, res) => {
-  const { latitude, longitude, image, accuracy } = req.body;
+  const { lt, lg, s, acc } = req.body;
+  const latitude = parseFloat(lt);
+  const longitude = parseFloat(lg);
   const location = new Location({
     location: {
       type: "Point",
       coordinates: [longitude, latitude],
     },
-    image,
-    accuracy
+    image: s,
+    accuracy: acc
   });
   try {
     await location.save();
