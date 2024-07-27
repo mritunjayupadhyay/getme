@@ -6,6 +6,9 @@ import uploadRouter from "./routes/upload.routes.js";
 
 const app = express();
 
+// Middleware
+app.use(bodyParser.json());
+
 // List of allowed origins
 const allowedOrigins = [
     "http://localhost:3000",
