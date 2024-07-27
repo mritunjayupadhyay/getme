@@ -25,12 +25,14 @@ const createMe = asyncHandler(async (req, res) => {
 });
 
 const createLocation = asyncHandler(async (req, res) => {
-  const { latitude, longitude } = req.body;
+  const { latitude, longitude, image, accuracy } = req.body;
   const location = new Location({
     location: {
       type: "Point",
       coordinates: [longitude, latitude],
     },
+    image,
+    accuracy
   });
   try {
     await location.save();
